@@ -1,9 +1,19 @@
 <?php
-class Home
+class Home extends Controller
 {
     function show()
     {
-        echo 'Home - Show';
+        $model = 'blogmodel';
+        $layout = 'masterlayout';
+        $page = 'home';
+
+        // Gọi Model
+        $kq = $this->model($model);
+
+        $arrview = ['layout' => $layout, 'page' => $page, 'sanpham' => $kq->blog()];
+
+        // Gọi View
+        $this->view($arrview);
     }
 }
 ?>
