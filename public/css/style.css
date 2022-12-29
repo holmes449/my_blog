@@ -1,0 +1,7 @@
+@import url(./global/reset.css);
+@import url(./global/variable.css);
+@import url(./global/main.css);
+@import url(./global/component.css);
+
+/* Page */
+@import url(./page/home.css);

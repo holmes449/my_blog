@@ -1,0 +1,68 @@
+/* Button */
+.btn {
+  border: 1px solid transparent;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  animation: btn ease 0.3s;
+  background-color: var(--color-bg-btn--hover);
+}
+
+@keyframes btn {
+  from {
+    background-color: var(--color-primary);
+  }
+  to {
+    background-color: var(--color-bg-btn--hover);
+  }
+}
+
+.btn--half {
+  padding: 16px 26px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin-left: -5px;
+}
+
+.btn--full {
+  border-radius: 50px;
+}
+
+.btn--origin {
+  border: 5px;
+}
+
+/* Input */
+.input {
+  padding: 16px 26px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-border-input);
+  color: #495057;
+}
+
+::placeholder {
+  color: #9b9b9b;
+}
+
+.input--full {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.input-origin {
+  border-radius: 50px;
+}
+
+.input--half {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.input:focus {
+  outline: none;
+}

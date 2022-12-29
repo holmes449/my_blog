@@ -1,0 +1,12 @@
+:root {
+  --width-page: 112.4rem;
+  --height-header: 88px;
+
+  /* Color */
+  --color-line: #eaecee;
+  --color-primary: #5869da;
+  --color-bg-btn--hover: #e3363e;
+  --color-border-input: #e1e1e1;
+  --color-placeholder: #9b9b9b;
+  --color-text: #687385;
+}
