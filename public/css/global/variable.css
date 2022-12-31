@@ -12,4 +12,21 @@
   --color-black: #000c2d;
   --color-white: #ffffff;
   --color-background-gray: #f7f8f9;
+  --color-secondary: #2d3d8b;
+  --color-success: #09815c;
+  --color-danger: #e3363e;
+  --color-warning: #e38836;
+  --color-info: #4da7d4;
+  --color-light: #f8f9f9;
+  --color-grey: #f7f8f9;
+  --color-muted: #687385;
+  --color-blue: #007bff;
+
+  /* Post */
+  --box-shadow-normal: 0 10px 10px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 4px 60px 0 rgba(0, 0, 0, 0.2);
+
+  /* Button */
+  --button-shadow-color-normal: hsla(0, 0%, 42.4%, 0.2);
+  --button-shadow-color-hover: hsla(0, 0%, 42.4%, 0.3);
 }

@@ -66,3 +66,43 @@
 .input:focus {
   outline: none;
 }
+
+/* Layout */
+.layout-row--two {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+}
+
+.layout-row--three {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Aimation Item */
+.post {
+  transition: all 0.25s;
+}
+
+.post:hover {
+  box-shadow: 0 6px 50px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+}
+
+.post--shadow {
+  transition: all 0.25s;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15), 0 0 0 0 transparent;
+}
+
+.post--shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 50px 0 rgba(0, 0, 0, 0.2);
+}
+/* ________________________________________________________ */
