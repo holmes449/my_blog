@@ -5,3 +5,5 @@
 
 /* Page */
 @import url(./page/home.css);
+@import url(./page/login.css);
+@import url(./page/register.css);

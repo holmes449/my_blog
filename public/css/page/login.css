@@ -1,0 +1,45 @@
+/* Page login */
+.login {
+  background-color: var(--color-background-gray);
+  padding: 80px 0 120px 0;
+}
+
+.login-myform {
+  width: 540px;
+  padding: 30px 30px 60px 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  min-height: 150px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-form);
+}
+
+.login-head {
+  margin-bottom: 30px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-input {
+  margin-bottom: 20px;
+}
+
+.login-help {
+  font-size: 1.3rem;
+  float: right;
+  color: var(--color-text);
+}
+
+.login-help:hover {
+  color: var(--color-primary);
+}
+
+.login-btn {
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}

@@ -29,4 +29,7 @@
   /* Button */
   --button-shadow-color-normal: hsla(0, 0%, 42.4%, 0.2);
   --button-shadow-color-hover: hsla(0, 0%, 42.4%, 0.3);
+
+  /* Form Shadow */
+  --shadow-form: 0px 0px 40px 0px rgb(0 0 0 / 5%);
 }
