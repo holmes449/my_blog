@@ -46,8 +46,8 @@
 }
 
 ::placeholder {
-  color: rgb(203, 203, 203);
-  font-weight: bold;
+  color: #9a9a9a;
+  /* font-weight: bold; */
 }
 
 .input--full {
@@ -55,7 +55,7 @@
   border-radius: 50px;
 }
 
-.input-origin {
+.input--origin {
   border-radius: 50px;
 }
 
@@ -65,6 +65,26 @@
 }
 
 .input:focus {
+  outline: none;
+}
+
+/* Textarea */
+.textarea {
+  padding: 16px 26px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-border-input);
+  color: #495057;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.textarea--full {
+  width: 100%;
+  min-height: 214px;
+}
+
+.textarea:focus {
   outline: none;
 }
 
