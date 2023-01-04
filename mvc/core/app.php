@@ -21,7 +21,7 @@ class App
 
         // Kiểm tra action - hàm trong controller tồn tại hay không
         if (isset($array_url[1])) {
-            if (method_exists($this->controller, $this->action)) {
+            if (method_exists($this->controller, $array_url[1])) {
                 $this->action = $array_url[1];
             }
         }

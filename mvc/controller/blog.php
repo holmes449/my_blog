@@ -1,14 +1,29 @@
 <?php
-class Blog
+class Blog extends Controller
 {
+
     function show()
     {
-        echo 'Blog - Show';
+        $view = 'masterlayout';
+        $page = 'blogall';
+        $arr_page = ['page' => $page];
+        $this->view($view, $arr_page);
+    }
+
+    function type()
+    {
+        $view = 'masterlayout';
+        $page = 'blogtype';
+        $arr_page = ['page' => $page];
+        $this->view($view, $arr_page);
     }
 
     function detail()
     {
-        echo 'Blog - Detail';
+        $view = 'masterlayout';
+        $page = 'blogdetail';
+        $arr_page = ['page' => $page];
+        $this->view($view, $arr_page);
     }
 }
 ?>

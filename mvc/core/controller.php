@@ -9,9 +9,9 @@ class Controller
     }
 
     // View
-    protected function view($view)
+    protected function view($view, $page = [])
     {
-        require_once('./mvc/view/' . $view['layout'] . '.php');
+        require_once('./mvc/view/' . $view . '.php');
     }
 }
 ?>

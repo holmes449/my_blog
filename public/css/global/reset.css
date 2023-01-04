@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--red);
 }
 
 html {
@@ -12,9 +11,13 @@ html {
 
 body {
   font-size: 1.6rem;
-  color: var(--color-black);
 }
 
 a {
   text-decoration: none;
+  color: var(--color-black);
+}
+
+a:hover {
+  color: var(--color-primary);
 }

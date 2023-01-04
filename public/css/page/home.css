@@ -115,6 +115,10 @@
   margin-bottom: 20px;
 }
 
+.home-frearured__hot-head a {
+  color: white;
+}
+
 .home-frearured__hot-date {
   color: var(--color-white);
   font-size: 1.3rem;
