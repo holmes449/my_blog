@@ -6,7 +6,7 @@
             <!-- All Item -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -22,7 +22,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -38,7 +38,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -54,7 +54,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -70,7 +70,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -101,20 +101,17 @@
             </div>
         </section>
 
-        <!-- Aside -->
+        <!-- Aside Home -->
         <aside class="home-aside">
             <!-- Aside About -->
             <div class="home-aside__about">
                 <div class="home-aside__about-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="About-image" />
+                    <img src="<?= ROOT_URL ?>/<?= $page['admin']['avatar'] ?>" alt=" About-image" />
                 </div>
-                <div class="home-aside__about-head">Hello I'm Long</div>
+                <div class="home-aside__about-head">Hello I'm <?= $page['admin']['ho'] . " " . $page['admin']['ten'] ?>
+                </div>
                 <div class="home-aside__about-text">
-                    Hiện tại, mình đang làm tại. Team dev cũng nho nhỏ (tổng cộng
-                    tầm 2 - 3 người), nhưng anh em làm việc rất vui và chuyên
-                    nghiệp! Kì này, mình sẽ đánh giá những công nghệ mà mình và team
-                    đang dùng, điểm mạnh/điểm yếu và những điều mình thích/ghét về
-                    chúng nhé.
+                    <?= $page['admin']['gioi_thieu'] ?>
                 </div>
             </div>
 
@@ -123,52 +120,26 @@
                 <!-- Aside Comment Head -->
                 <div class="home-aside__comment-head">Nhận xét cuối cùng</div>
 
-                <!-- Aside Comment Item -->
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
+                <?php foreach ($page['cmt'] as $item) { ?>
+                    <?php $user = $page['m_user']->userSelectById($item['id_tk']) ?>
+                    <!-- Aside Comment Item -->
+                    <div class="home-aside__comment-item post">
+                        <div class="home-aside__comment-item-img">
+                            <img src="<?= ROOT_URL ?>/<?= $user['avatar'] ?>" alt="User-image" />
                         </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
-                        </div>
-                    </div>
-                </div>
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
-                        </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
+                        <div>
+                            <div class="home-aside__comment-item-head">
+                                <div class="home-aside__comment-item-name">
+                                    <?= $user['ho'] . " " . $user['ten'] ?>
+                                </div>
+                                <div class="home-aside__comment-item-date"><?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?></div>
+                            </div>
+                            <div class="home-aside__comment-item-text">
+                                <?= $item['noidung_cmt'] ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
-                        </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </aside>
     </div>

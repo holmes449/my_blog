@@ -10,7 +10,7 @@
                 <p class="home-about__text">Welcome to my blog</p>
             </div>
             <div class="home-about__item">
-                <img src="<?php ROOT_URL() ?>/public/image/banner/featured.png" alt="Banner-image"
+                <img src="<?= ROOT_URL ?>/public/image/banner/featured.png" alt="Banner-image"
                     class="home-about__img" />
             </div>
         </div>
@@ -20,140 +20,63 @@
     <section class="home-featured home-width home-bg">
         <div class="home-featured__head">Tin nổi bật</div>
         <div class="home-featured__cont layout-row--three">
-            <div class="home-fearured__item post home-featured__hot">
-                <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/lion.jpg" alt=""
-                    class="home-frearured__hot-img" />
-                <div class="home-frearured__hot-list">
-                    <div class="home-frearured__hot-tag">
-                        <span><a href="" style="color: rgb(0, 153, 255)">Thẻ the</a></span>
-                        <span><a href="" style="color: green">Thẻ the</a></span>
-                    </div>
-                    <div class="home-frearured__hot-head">
-                        <a href="">Tiêu đề của bài viết Tiêu đề của bài viết Tiêu đề của bài
-                            viết Tiêu đề của bài viết</a>
-                    </div>
-                    <div class="home-frearured__hot-date">
-                        31 December 2022
-                        <span></span>
-                        18k view
-                    </div>
-                </div>
-                <div class="home-frearured__hot-btn">
-                    <i class="fa-solid fa-arrow-left-long home-frearured__hot-btn--back" onclick="plusDivs(-1)"></i>
-                    <i class="fa-solid fa-arrow-right-long home-frearured__hot-btn--next" onclick="plusDivs(+1)"></i>
-                </div>
-            </div>
-            <div class="home-fearured__item post home-featured__hot">
-                <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/yourname.jfif" alt=""
-                    class="home-frearured__hot-img" />
-                <div class="home-frearured__hot-list">
-                    <div class="home-frearured__hot-tag">
-                        <span><a href="" style="color: rgb(0, 153, 255)">Thẻ the</a></span>
-                        <span><a href="" style="color: green">Thẻ the</a></span>
-                    </div>
-                    <div class="home-frearured__hot-head">
-                        <a href="">Tiêu đề của bài viết Tiêu đề của bài viết Tiêu đề của bài
-                            viết Tiêu đề của bài viết</a>
-                    </div>
-                    <div class="home-frearured__hot-date">
-                        31 December 2022
-                        <span></span>
-                        18k view
-                    </div>
-                </div>
-                <div class="home-frearured__hot-btn">
-                    <i class="fa-solid fa-arrow-left-long home-frearured__hot-btn--back" onclick="plusDivs(-1)"></i>
-                    <i class="fa-solid fa-arrow-right-long home-frearured__hot-btn--next" onclick="plusDivs(+1)"></i>
-                </div>
-            </div>
-            <div class="home-fearured__item post home-featured__hot">
-                <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg" alt=""
-                    class="home-frearured__hot-img" />
-                <div class="home-frearured__hot-list">
-                    <div class="home-frearured__hot-tag">
-                        <span><a href="" style="color: rgb(0, 153, 255)">Thẻ the</a></span>
-                        <span><a href="" style="color: green">Thẻ the</a></span>
-                    </div>
-                    <div class="home-frearured__hot-head">
-                        <a href="">Tiêu đề của bài viết Tiêu đề của bài viết Tiêu đề của bài
-                            viết Tiêu đề của bài viết</a>
-                    </div>
-                    <div class="home-frearured__hot-date">
-                        31 December 2022
-                        <span></span>
-                        18k view
-                    </div>
-                </div>
-                <div class="home-frearured__hot-btn">
-                    <i class="fa-solid fa-arrow-left-long home-frearured__hot-btn--back" onclick="plusDivs(-1)"></i>
-                    <i class="fa-solid fa-arrow-right-long home-frearured__hot-btn--next" onclick="plusDivs(+1)"></i>
-                </div>
-            </div>
-            <div class="home-fearured__item post--shadow">
-                <div class="home-fearured__post">
-                    <div class="home-fearured__post-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image"
-                            width="100%" height="100%" />
-                        <div></div>
-                    </div>
-                    <div class="home-fearured__post-cont">
-                        <div class="home-fearured__post-tag">Thẻ</div>
-                        <div class="home-fearured__post-head">
-                            <a href="">Tiêu đề bài viết </a>
+            <?php foreach ($page['tin_noibat'] as $item) { ?>
+                <!-- Item -->
+                <div class="home-fearured__item post home-featured__hot">
+                    <img src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" class="home-frearured__hot-img" />
+                    <div class="home-frearured__hot-list">
+                        <div class="home-frearured__hot-tag">
+                            <?php
+                            foreach ($page['m_tag']->tagSelectById($item['id_bv']) as $tag_item) {
+                                ?>
+                                <!-- Item -->
+                                <span><a href="<?= ROOT_URL ?>/blog/type/<?= $tag_item['id_tag'] ?>" style="color: white">
+                                        <?= $tag_item['ten_tag'] ?>
+                                    </a></span>
+
+                            <?php } ?>
                         </div>
-                        <div class="home-fearured__post-date">31/12/2022</div>
-                    </div>
-                </div>
-            </div>
-            <div class="home-fearured__item post--shadow">
-                <div class="home-fearured__post">
-                    <div class="home-fearured__post-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/yourname.jfif" alt="Post-image"
-                            width="100%" height="100%" />
-                        <div></div>
-                    </div>
-                    <div class="home-fearured__post-cont">
-                        <div class="home-fearured__post-tag">Thẻ</div>
-                        <div class="home-fearured__post-head">
-                            <a href="">Tiêu đề bài viết </a>
-                        </div>
-                        <div class="home-fearured__post-date">31/12/2022</div>
-                    </div>
-                </div>
-            </div>
-            <div class="home-fearured__item post--shadow">
-                <div class="home-fearured__post">
-                    <div class="home-fearured__post-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/lion.jpg" alt="Post-image"
-                            width="100%" height="100%" />
-                        <div></div>
-                    </div>
-                    <div class="home-fearured__post-cont">
-                        <div class="home-fearured__post-tag">Thẻ</div>
-                        <div class="home-fearured__post-head">
-                            <a href="">Tiêu đề bài viết </a>
-                        </div>
-                        <div class="home-fearured__post-date">31/12/2022</div>
-                    </div>
-                </div>
-            </div>
-            <div class="home-fearured__item post--shadow">
-                <div class="home-fearured__post">
-                    <div class="home-fearured__post-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg" alt="Post-image"
-                            width="100%" height="100%" />
-                        <div></div>
-                    </div>
-                    <div class="home-fearured__post-cont">
-                        <div class="home-fearured__post-tag">Thẻ</div>
-                        <div class="home-fearured__post-head">
-                            <a href="">Tiêu đề bài viết Tiêu đề bài viết Tiêu đề bài viết
+                        <div class="home-frearured__hot-head">
+                            <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
+                                <?= $item['tieu_de'] ?>
                             </a>
                         </div>
-                        <div class="home-fearured__post-date">31/12/2022</div>
+                        <div class="home-frearured__hot-date">
+                            <?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?>
+                            <span></span>
+                            <?= $item['luot_xem'] ?> view
+                        </div>
+                    </div>
+                    <div class="home-frearured__hot-btn">
+                        <i class="fa-solid fa-arrow-left-long home-frearured__hot-btn--back" onclick="plusDivs(-1)"></i>
+                        <i class="fa-solid fa-arrow-right-long home-frearured__hot-btn--next" onclick="plusDivs(+1)"></i>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
+
+            <?php foreach ($page['m_post']->postSelectNewFour() as $item) { ?>
+                <!-- Item -->
+                <div class="home-fearured__item post--shadow">
+                    <div class="home-fearured__post">
+                        <div class="home-fearured__post-img">
+                            <img src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" width="100%"
+                                height="100%" />
+                            <div></div>
+                        </div>
+                        <div class="home-fearured__post-cont">
+                            <div class="home-fearured__post-head">
+                                <a href="<?= ROOT_URL ?>/post/detail/<?= $item['id_bv'] ?>">
+                                    <?= $item['tieu_de'] ?>
+                                </a>
+                            </div>
+                            <div class="home-fearured__post-date">
+                                <?= date("d/m/Y - H:i", strtotime($item['ngay_capnhat'])) ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
         </div>
     </section>
 
@@ -162,218 +85,66 @@
         <div class="home-list">
             <div class="home-view__head">Bài viết xem nhiều</div>
             <section class="home-view layout-row--two">
-                <!-- Post -->
-                <div class="home-view__item post--shadow">
-                    <div class="home-view__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/lion.jpg"
-                                alt="Post-image" />
-                            <div></div>
-                        </a>
-                    </div>
-                    <div class="home-view__cont">
-                        <div class="home-view__cont-tag">Thẻ</div>
-                        <div class="home-view__cont-head">
-                            <a href="">Tiêu đề bài viết</a>
+
+                <?php foreach ($page['m_post']->postSelectView() as $item) { ?>
+                    <!-- Post -->
+                    <div class="home-view__item post--shadow">
+                        <div class="home-view__img">
+                            <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>"><img
+                                    src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" />
+                                <div></div>
+                            </a>
                         </div>
-                        <div class="home-view__cont-text">
-                            Hiện tại, mình đang làm tại SwatMobility. Team dev cũng nho
-                            nhỏ (tổng cộng tầm 8-10 người), nhưng anh em làm việc rất
-                            vui và chuyên nghiệp! Kì này, mình sẽ đánh giá những công
-                            nghệ mà mình và team đang dùng, điểm mạnh/điểm yếu và những
-                            điều mình thích/ghét về chúng nhé.
-                        </div>
-                        <div class="home-view__cont-date">
-                            31/12/2022 <span></span> 123view
-                        </div>
-                    </div>
-                </div>
-                <div class="home-view__item post--shadow">
-                    <div class="home-view__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg"
-                                alt="Post-image" />
-                            <div></div>
-                        </a>
-                    </div>
-                    <div class="home-view__cont">
-                        <div class="home-view__cont-tag">Thẻ</div>
-                        <div class="home-view__cont-head">
-                            <a href="">Tiêu đề bài viết</a>
-                        </div>
-                        <div class="home-view__cont-text">
-                            Hiện tại, mình đang làm tại SwatMobility. Team dev cũng nho
-                            nhỏ (tổng cộng tầm 8-10 người), nhưng anh em làm việc rất
-                            vui và chuyên nghiệp! Kì này, mình sẽ đánh giá những công
-                            nghệ mà mình và team đang dùng, điểm mạnh/điểm yếu và những
-                            điều mình thích/ghét về chúng nhé.
-                        </div>
-                        <div class="home-view__cont-date">
-                            31/12/2022 <span></span> 123view
+                        <div class="home-view__cont">
+                            <?php foreach ($page['m_tag']->tagSelectById($item['id_bv']) as $item_tag) { ?>
+                                <div class="home-view__cont-tag"><?= $item_tag['ten_tag'] ?></div>
+                            <?php } ?>
+                            <div class="home-view__cont-head">
+                                <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
+                                    <?= $item['tieu_de'] ?>
+                                </a>
+                            </div>
+                            <div class="home-view__cont-text">
+                                <?= $item['tom_tat'] ?>
+                            </div>
+                            <div class="home-view__cont-date">
+                                <?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?> <span></span>
+                                <?= $item['luot_xem'] ?> view
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="home-view__item post--shadow">
-                    <div class="home-view__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/yourname.jfif"
-                                alt="Post-image" />
-                            <div></div>
-                        </a>
-                    </div>
-                    <div class="home-view__cont">
-                        <div class="home-view__cont-tag">Thẻ</div>
-                        <div class="home-view__cont-head">
-                            <a href="">Tiêu đề bài viết</a>
-                        </div>
-                        <div class="home-view__cont-text">
-                            Hiện tại, mình đang làm tại SwatMobility. Team dev cũng nho
-                            nhỏ (tổng cộng tầm 8-10 người), nhưng anh em làm việc rất
-                            vui và chuyên nghiệp! Kì này, mình sẽ đánh giá những công
-                            nghệ mà mình và team đang dùng, điểm mạnh/điểm yếu và những
-                            điều mình thích/ghét về chúng nhé.
-                        </div>
-                        <div class="home-view__cont-date">
-                            31/12/2022 <span></span> 123view
-                        </div>
-                    </div>
-                </div>
-                <div class="home-view__item post--shadow">
-                    <div class="home-view__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif"
-                                alt="Post-image" />
-                            <div></div>
-                        </a>
-                    </div>
-                    <div class="home-view__cont">
-                        <div class="home-view__cont-tag">Thẻ</div>
-                        <div class="home-view__cont-head">
-                            <a href="">Tiêu đề bài viết</a>
-                        </div>
-                        <div class="home-view__cont-text">
-                            Hiện tại, mình đang làm tại SwatMobility. Team dev cũng nho
-                            nhỏ (tổng cộng tầm 8-10 người), nhưng anh em làm việc rất
-                            vui và chuyên nghiệp! Kì này, mình sẽ đánh giá những công
-                            nghệ mà mình và team đang dùng, điểm mạnh/điểm yếu và những
-                            điều mình thích/ghét về chúng nhé.
-                        </div>
-                        <div class="home-view__cont-date">
-                            31/12/2022 <span></span> 123view
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </section>
 
             <!-- New Post -->
             <section class="home-post">
                 <div class="home-view__head">Bài viết mới</div>
 
-                <!-- Post -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif"
-                                alt="Post-image" /></a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
+                <?php foreach ($page['m_post']->postSelectNewSix() as $item) { ?>
+                    <!-- Post -->
+                    <div class="home-post__item">
+                        <div class="home-post__img">
+                            <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>"><img
+                                    src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" /></a>
                         </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href="">
-                            <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg" alt="Post-image" />
-                        </a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
-                        </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
+                        <div class="home-post__cont">
+                            <div class="home-post__cont-tag">Thẻ</div>
+                            <div class="home-post__cont-head">
+                                <a href="">
+                                    <?= $item['tieu_de'] ?>
+                                </a>
+                            </div>
+                            <div class="home-post__cont-date">
+                                <?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?><span></span>
+                                <?= $item['luot_xem'] ?> VIEW
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--  -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href="">
-                            <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/lion.jpg" alt="Post-image" />
-                        </a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
-                        </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href=""><img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif"
-                                alt="Post-image" /></a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
-                        </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href="">
-                            <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg" alt="Post-image" />
-                        </a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
-                        </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="home-post__item">
-                    <div class="home-post__img">
-                        <a href="">
-                            <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/lion.jpg" alt="Post-image" />
-                        </a>
-                    </div>
-                    <div class="home-post__cont">
-                        <div class="home-post__cont-tag">Thẻ</div>
-                        <div class="home-post__cont-head">
-                            <a href="">REVIEW NHẸ CÁC NGÔN NGỮ, CÔNG NGHỆ, FRAMEWORK MÀ MÌNH ĐÃ
-                                VÀ ĐANG DÙNG KIẾM CƠM</a>
-                        </div>
-                        <div class="home-post__cont-date">
-                            31/12/2022<span></span>123 VIEW
-                        </div>
-                    </div>
-                </div>
+                    <!--  -->
+                <?php } ?>
 
                 <!-- Page Number -->
-                <div class="home-post__numpage">
+                <!-- <div class="home-post__numpage">
                     <div class="home-post__numpage-item">
                         <a href=""><i class="fa-solid fa-arrow-left"></i></a>
                     </div>
@@ -385,7 +156,7 @@
                     <div class="home-post__numpage-item">
                         <a href=""><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
 
@@ -394,15 +165,12 @@
             <!-- Aside About -->
             <div class="home-aside__about">
                 <div class="home-aside__about-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="About-image" />
+                    <img src="<?= ROOT_URL ?>/<?= $page['admin']['avatar'] ?>" alt=" About-image" />
                 </div>
-                <div class="home-aside__about-head">Hello I'm Long</div>
+                <div class="home-aside__about-head">Hello I'm <?= $page['admin']['ho'] . " " . $page['admin']['ten'] ?>
+                </div>
                 <div class="home-aside__about-text">
-                    Hiện tại, mình đang làm tại. Team dev cũng nho nhỏ (tổng cộng
-                    tầm 2 - 3 người), nhưng anh em làm việc rất vui và chuyên
-                    nghiệp! Kì này, mình sẽ đánh giá những công nghệ mà mình và team
-                    đang dùng, điểm mạnh/điểm yếu và những điều mình thích/ghét về
-                    chúng nhé.
+                    <?= $page['admin']['gioi_thieu'] ?>
                 </div>
             </div>
 
@@ -411,52 +179,26 @@
                 <!-- Aside Comment Head -->
                 <div class="home-aside__comment-head">Nhận xét cuối cùng</div>
 
-                <!-- Aside Comment Item -->
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
+                <?php foreach ($page['cmt'] as $item) { ?>
+                    <?php $user = $page['m_user']->userSelectById($item['id_tk']) ?>
+                    <!-- Aside Comment Item -->
+                    <div class="home-aside__comment-item post">
+                        <div class="home-aside__comment-item-img">
+                            <img src="<?= ROOT_URL ?>/<?= $user['avatar'] ?>" alt="User-image" />
                         </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
-                        </div>
-                    </div>
-                </div>
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
-                        </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
+                        <div>
+                            <div class="home-aside__comment-item-head">
+                                <div class="home-aside__comment-item-name">
+                                    <?= $user['ho'] . " " . $user['ten'] ?>
+                                </div>
+                                <div class="home-aside__comment-item-date"><?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?></div>
+                            </div>
+                            <div class="home-aside__comment-item-text">
+                                <?= $item['noidung_cmt'] ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="home-aside__comment-item post">
-                    <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
-                    </div>
-                    <div>
-                        <div class="home-aside__comment-item-head">
-                            <div class="home-aside__comment-item-name">Mai Long</div>
-                            <div class="home-aside__comment-item-date">01/01/2023</div>
-                        </div>
-                        <div class="home-aside__comment-item-text">
-                            Bài viết quá lạ lùng và kỳ cục, bài viết quá lạ lùng và kỳ
-                            cục, Bài viết quá lạ lùng và kỳ cục.
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </aside>
     </div>

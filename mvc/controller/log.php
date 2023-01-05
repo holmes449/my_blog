@@ -5,16 +5,34 @@ class Log extends Controller
     {
         $view = 'masterlayout';
         $page = 'login';
-        $arr = ['page' => $page];
-        $this->view($view, $arr);
+
+        // Gọi Model
+        $m_tag = $this->model("tagmodel");
+        $arr_tag = $m_tag->tagSelectAll();
+
+        // Gọi View
+        $page = [
+            'page' => $page,
+            'tag' => $arr_tag
+        ];
+        $this->view($view, $page);
     }
 
     function register()
     {
         $view = 'masterlayout';
         $page = 'register';
-        $arr = ['page' => $page];
-        $this->view($view, $arr);
+
+        // Gọi Model
+        $m_tag = $this->model("tagmodel");
+        $arr_tag = $m_tag->tagSelectAll();
+
+        // Gọi View
+        $page = [
+            'page' => $page,
+            'tag' => $arr_tag
+        ];
+        $this->view($view, $page);
     }
 }
 ?>

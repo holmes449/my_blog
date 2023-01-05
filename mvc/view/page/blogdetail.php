@@ -7,7 +7,7 @@
         </div>
         <div class="detail-user">
             <div class="detail-user__img">
-                <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="avatar" />
+                <img src="<?= ROOT_URL ?>/public/image/admin/avatar/avatar.jpg" alt="avatar" />
             </div>
             <div>
                 <div class="detail-user__name">By <span>Mai Tieu Long</span></div>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="detail-img">
-            <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/tiger.jpg" alt="Post-image" />
+            <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/tiger.jpg" alt="Post-image" />
         </div>
         <div class="detail-cont">
             Cấu hình Galaxy S23 Ultra Galaxy S23 Ultra được cho là đã xuất hiện
@@ -60,7 +60,7 @@
             <!-- Post -->
             <div class="detail-related-post__item">
                 <div class="detail-related-post__img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="detail-related-post__list">
                     <div class="detail-related-post__tag">
@@ -76,7 +76,7 @@
             <!-- Post -->
             <div class="detail-related-post__item">
                 <div class="detail-related-post__img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="detail-related-post__list">
                     <div class="detail-related-post__tag">
@@ -98,7 +98,7 @@
             <div class="detail-comment__item detail-comment__item--reply">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">
@@ -124,7 +124,7 @@
             <div class="detail-comment__item detail-comment__child">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">
@@ -148,7 +148,7 @@
             <div class="detail-comment__item detail-comment__item--reply">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">
@@ -174,7 +174,7 @@
             <div class="detail-comment__item detail-comment__child">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">
@@ -198,7 +198,7 @@
             <div class="detail-comment__item detail-comment__item--reply">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">
@@ -228,7 +228,7 @@
             <div class="detail-comment__item detail-comment__item--reply">
                 <div class="detail-comment__item--left">
                     <div class="detail-comment__item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
+                        <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="avatar" />
                     </div>
                 </div>
                 <div class="detail-comment__item--right">

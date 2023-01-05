@@ -6,7 +6,7 @@
             <!-- All Item -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -22,7 +22,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -38,7 +38,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -54,7 +54,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -70,7 +70,7 @@
             <!--  -->
             <div class="all-main__item">
                 <div class="all-main__item-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/post/corver-photo/owl.jfif" alt="Post-image" />
                 </div>
                 <div class="all-main__item-list">
                     <div class="all-main__item-tag">Thẻ<span></span>Thẻ</div>
@@ -106,7 +106,7 @@
             <!-- Aside About -->
             <div class="home-aside__about">
                 <div class="home-aside__about-img">
-                    <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="About-image" />
+                    <img src="<?= ROOT_URL ?>/public/image/admin/avatar/avatar.jpg" alt="About-image" />
                 </div>
                 <div class="home-aside__about-head">Hello I'm Long</div>
                 <div class="home-aside__about-text">
@@ -126,7 +126,7 @@
                 <!-- Aside Comment Item -->
                 <div class="home-aside__comment-item post">
                     <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
+                        <img src="<?= ROOT_URL ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
                     </div>
                     <div>
                         <div class="home-aside__comment-item-head">
@@ -141,7 +141,7 @@
                 </div>
                 <div class="home-aside__comment-item post">
                     <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
+                        <img src="<?= ROOT_URL ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
                     </div>
                     <div>
                         <div class="home-aside__comment-item-head">
@@ -156,7 +156,7 @@
                 </div>
                 <div class="home-aside__comment-item post">
                     <div class="home-aside__comment-item-img">
-                        <img src="<?php ROOT_URL() ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
+                        <img src="<?= ROOT_URL ?>/public/image/admin/avatar/avatar.jpg" alt="User-image" />
                     </div>
                     <div>
                         <div class="home-aside__comment-item-head">

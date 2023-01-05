@@ -264,6 +264,7 @@
   margin-bottom: 10px;
   font-size: 1.3rem;
   font-weight: bold;
+  display: inline-block;
 }
 
 .home-view__cont-tag::after {
@@ -271,6 +272,10 @@
 }
 
 .home-view__cont-head {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin-bottom: 20px;
   font-size: 2rem;
   color: var(--color-black);
@@ -402,7 +407,8 @@
   box-shadow: 0 4px 8px var(--button-shadow-color-hover), 0 0 0 transparent;
 }
 
-.home-post__numpage-item--select {
+.home-post__numpage-item--select a {
+  border-radius: 50%;
   background-color: var(--color-blue);
   color: var(--color-white);
 }

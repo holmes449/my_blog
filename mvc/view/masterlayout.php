@@ -8,7 +8,7 @@
     <title>Stories</title>
 
     <!-- Css -->
-    <link rel="stylesheet" href="<?php ROOT_URL() ?>/public/css/style.css" />
+    <link rel="stylesheet" href="<?= ROOT_URL ?>/public/css/style.css" />
     <!-- Font icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
@@ -18,8 +18,8 @@
         <!-- Header -->
         <header class="header">
             <div class="header-logo">
-                <a href="<?php ROOT_URL() ?>/home"><img src="<?php ROOT_URL() ?>/public/image/logo/logo.png"
-                        alt="Logo-image" class="header-logo__img" title="Trang chủ" /></a>
+                <a href="<?= ROOT_URL ?>/home"><img src="<?= ROOT_URL ?>/public/image/logo/logo.png" alt="Logo-image"
+                        class="header-logo__img" title="Trang chủ" /></a>
             </div>
 
             <div class="header-search">
@@ -37,32 +37,37 @@
             <div class="nav-container">
                 <ul class="nav-menu">
                     <li class="nav-menu__item">
-                        <a href="<?php ROOT_URL() ?>/home" class="nav-menu__link"><i
+                        <a href="<?= ROOT_URL ?>/home" class="nav-menu__link"><i
                                 class="fa-solid fa-house-user nav-menu__icon nav-menu__icon--left"></i>Trang chủ</a>
                     </li>
                     <li class="nav-menu__item">
-                        <a href="<?php ROOT_URL() ?>/blog" class="nav-menu__link">Tất cả bài viết</a>
+                        <a href="<?= ROOT_URL ?>/blog" class="nav-menu__link">Tất cả bài viết</a>
                     </li>
                     <li class="nav-menu__item">
                         <a href="" class="nav-menu__link">Về chúng tôi</a>
                     </li>
                     <li class="nav-menu__item">
-                        <a href="<?php ROOT_URL() ?>/blog/type" class="nav-menu__link">Chủ đề<i
+                        <a href="<?= ROOT_URL ?>/blog/type" class="nav-menu__link">Thẻ<i
                                 class="fa-solid fa-caret-down nav-menu__icon nav-menu__icon--right"></i></a>
                         <ul class="nav-submenu">
-                            <li class="nav-submenu__item">
-                                <a href="<?php ROOT_URL() ?>/blog/type" class="nav-submenu__link">Chủ đề 01</a>
-                            </li>
+                            <?php foreach ($page['tag'] as $item_tag) { ?>
+                                <li class="nav-submenu__item">
+                                    <a href="<?= ROOT_URL ?>/blog/type/<?= $item_tag['id_tag'] ?>"
+                                        class="nav-submenu__link">
+                                        <?= $item_tag['ten_tag'] ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav-log">
                     <li class="nav-log__item">
-                        <a href="<?php ROOT_URL() ?>/log/register" class="nav-log__link">Đăng ký</a>
+                        <a href="<?= ROOT_URL ?>/log/register" class="nav-log__link">Đăng ký</a>
                     </li>
                     <span class="nav-line"></span>
                     <li class="nav-log__item">
-                        <a href="<?php ROOT_URL() ?>/log" class="nav-log__link">Đăng nhập</a>
+                        <a href="<?= ROOT_URL ?>/log" class="nav-log__link">Đăng nhập</a>
                     </li>
                 </ul>
             </div>
@@ -99,14 +104,22 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="footer-item">
                         <div class="footer-item__head">Chủ đề</div>
                         <div class="footer-tag">
-                            <div class="footer-tag__item">
-                                <a href="" class="footer-tag__link">Beautiful</a>
-                            </div>
+
+                            <?php foreach ($page['tag'] as $item) { ?>
+                                <!-- Item -->
+                                <div class="footer-tag__item">
+                                    <a href="<?=ROOT_URL?>/blog/type/<?=$item['id_tag']?>" class="footer-tag__link"><?= $item['ten_tag'] ?></a>
+                                </div>
+                                <!--  -->
+                            <?php } ?>
+
                         </div>
                     </div>
+
                     <div class="footer-item">
                         <div class="footer-item__head">Công cụ</div>
                         <div class="footer-newslleter">
@@ -134,11 +147,11 @@
                 </div>
             </div>
         </footer>
-        <?php echo ROOT_URL() ?>
+
     </div>
 
     <!-- JavaScript -->
-    <script src="<?php ROOT_URL() ?>/public/js/frearuned.js"></script>
+    <script src="<?= ROOT_URL ?>/public/js/frearuned.js"></script>
 </body>
 
 </html>
