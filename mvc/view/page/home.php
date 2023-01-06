@@ -65,7 +65,7 @@
                         </div>
                         <div class="home-fearured__post-cont">
                             <div class="home-fearured__post-head">
-                                <a href="<?= ROOT_URL ?>/post/detail/<?= $item['id_bv'] ?>">
+                                <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
                                     <?= $item['tieu_de'] ?>
                                 </a>
                             </div>
@@ -130,7 +130,7 @@
                         <div class="home-post__cont">
                             <div class="home-post__cont-tag">Thẻ</div>
                             <div class="home-post__cont-head">
-                                <a href="">
+                                <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
                                     <?= $item['tieu_de'] ?>
                                 </a>
                             </div>

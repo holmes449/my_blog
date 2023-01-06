@@ -63,5 +63,18 @@ class Database
             unset($conn);
         }
     }
+
+    // Hàm xử lý prepare ngoại lệ
+    function pdoPrepare($sql)
+    {
+        try {
+            $conn = $this->pdoConn();
+            return $conn->prepare($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        } finally {
+            unset($conn);
+        }
+    }
 }
 ?>

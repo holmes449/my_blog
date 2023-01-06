@@ -14,7 +14,7 @@ class Home extends Controller
         $arr_tag = $m_tag->tagSelectAll();
         $arr_post_noibat = $m_post->postSelectNoiBat();
         $admin = $m_user->userSelectAdmin();
-        $cmt = $m_cmt->CmtSelectNew();
+        $cmt = $m_cmt->cmtSelectNew();
 
 
         // Gọi View

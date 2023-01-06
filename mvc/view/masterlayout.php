@@ -44,7 +44,7 @@
                         <a href="<?= ROOT_URL ?>/blog" class="nav-menu__link">Tất cả bài viết</a>
                     </li>
                     <li class="nav-menu__item">
-                        <a href="" class="nav-menu__link">Về chúng tôi</a>
+                        <a href="<?=ROOT_URL?>/about" class="nav-menu__link">Về chúng tôi</a>
                     </li>
                     <li class="nav-menu__item">
                         <a href="<?= ROOT_URL ?>/blog/type" class="nav-menu__link">Thẻ<i
