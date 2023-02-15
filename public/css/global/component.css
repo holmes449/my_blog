@@ -47,7 +47,10 @@
 
 ::placeholder {
   color: #9a9a9a;
-  /* font-weight: bold; */
+}
+
+.input--error::placeholder {
+  color: var(--color-danger) !important;
 }
 
 .input--full {
@@ -89,15 +92,17 @@
 }
 
 /* Layout */
-.layout-row--two {
+/* .layout-row--two {
   display: grid;
   grid-template-columns: auto auto;
   gap: 30px;
-}
+} */
 
-.layout-row--three {
-  display: grid;
-  grid-template-columns: auto auto auto;
+.layout-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 30px;
 }
 
@@ -127,3 +132,9 @@
   box-shadow: var(--box-shadow-normal), var(--box-shadow-hover);
 }
 /* ________________________________________________________ */
+
+@media only screen and (max-width: 800px) {
+  .layout-row {
+    flex-direction: column;
+  }
+}

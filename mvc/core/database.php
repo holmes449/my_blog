@@ -22,7 +22,7 @@ class Database
             $conn = $this->pdoConn();
             $kq = $conn->prepare($sql);
             $kq->execute($array_param);
-            return $kq;
+            return $kq->rowCount();
         } catch (PDOException $e) {
             echo $e->getMessage();
         } finally {

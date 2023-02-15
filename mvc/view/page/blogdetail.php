@@ -63,6 +63,7 @@
 
         <div class="detail-head--min">Nhận xét</div>
         
+        <div id="ajax_cmt">
         <?php foreach($page['m_cmt']->cmtSelectAll($page['post']['id_bv']) as $cmt) { ?>
         <?php $user = $page['m_user']->userSelectById($cmt['id_tk']);?>
         <!-- Comment -->
@@ -116,21 +117,22 @@
         </div>
         <!--  -->
         <?php } ?>
+        </div>
 
         <!-- _____________________________________________________________ -->
         <div class="detail-head--min">Nhận xét tại đây</div>
         <!-- Comment Form -->
         <section class="detail-comment__form">
-            <form action="" method="post">
+            <!-- <form action="" method="post"> -->
                 <textarea name="" id="" cols="30" rows="10" class="textarea textarea--full"
                     placeholder="Viết nhận xét"></textarea>
                 <br />
                 <div class="detail-comment__form-input">
-                    <input type="text" name="" id="" class="input input--origin" placeholder="Tên của bạn" />
-                    <input type="email" name="" id="" class="input input--origin" placeholder="Email" />
+                    <input type="text" name="" id="" class="input input--origin" placeholder="Tên của bạn" <?= isset($_SESSION['user']) ? "disabled" : "" ?> />
+                    <input type="email" name="" id="" class="input input--origin" placeholder="Email" <?= isset($_SESSION['user']) ? "disabled" : "" ?> />
                 </div>
-                <input type="submit" value="Đăng nhận xét" class="btn btn--full detail-comment__form-btn" />
-            </form>
+                <input type="submit" value="Đăng nhận xét" onclick="sendMsg()" class="btn btn--full detail-comment__form-btn" />
+            <!-- </form> -->
         </section>
     </section>
 </article>

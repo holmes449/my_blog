@@ -2,7 +2,7 @@
 <article class="home">
     <!-- Home About -->
     <section class="home-about home-width">
-        <div class="layout-row--two home-margin">
+        <div class="layout-row home-margin">
             <div class="home-about__item">
                 <p class="home-about__text">
                     Hello, I'm <span class="home-about__text--blue">Mai Long</span>
@@ -19,10 +19,10 @@
     <!-- Home Featured -->
     <section class="home-featured home-width home-bg">
         <div class="home-featured__head">Tin nổi bật</div>
-        <div class="home-featured__cont layout-row--three">
-            <?php foreach ($page['tin_noibat'] as $item) { ?>
+        <div class="home-featured__cont layout-row">
+            <?php foreach ($page['m_post']->postSelectNoiBat() as $item) { ?>
                 <!-- Item -->
-                <div class="home-fearured__item post home-featured__hot">
+                <div class=" post home-featured__hot">
                     <img src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" class="home-frearured__hot-img" />
                     <div class="home-frearured__hot-list">
                         <div class="home-frearured__hot-tag">
@@ -84,7 +84,7 @@
     <div class="home-container home-width home-bg row">
         <div class="home-list">
             <div class="home-view__head">Bài viết xem nhiều</div>
-            <section class="home-view layout-row--two">
+            <section class="home-view layout-row">
 
                 <?php foreach ($page['m_post']->postSelectView() as $item) { ?>
                     <!-- Post -->
@@ -97,7 +97,9 @@
                         </div>
                         <div class="home-view__cont">
                             <?php foreach ($page['m_tag']->tagSelectById($item['id_bv']) as $item_tag) { ?>
-                                <div class="home-view__cont-tag"><?= $item_tag['ten_tag'] ?></div>
+                                <div class="home-view__cont-tag">
+                                    <?= $item_tag['ten_tag'] ?>
+                                </div>
                             <?php } ?>
                             <div class="home-view__cont-head">
                                 <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
@@ -128,7 +130,11 @@
                                     src="<?= ROOT_URL ?>/<?= $item['anh_bia'] ?>" alt="Post-image" /></a>
                         </div>
                         <div class="home-post__cont">
-                            <div class="home-post__cont-tag">Thẻ</div>
+                            <?php foreach ($page['m_tag']->tagSelectById($item['id_bv']) as $item_tag) { ?>
+                                <div class="home-post__cont-tag">
+                                    <?= $item_tag['ten_tag'] ?>
+                                </div>
+                            <?php } ?>
                             <div class="home-post__cont-head">
                                 <a href="<?= ROOT_URL ?>/blog/detail/<?= $item['id_bv'] ?>">
                                     <?= $item['tieu_de'] ?>
@@ -161,45 +167,6 @@
         </div>
 
         <!-- Aside Home -->
-        <aside class="home-aside">
-            <!-- Aside About -->
-            <div class="home-aside__about">
-                <div class="home-aside__about-img">
-                    <img src="<?= ROOT_URL ?>/<?= $page['admin']['avatar'] ?>" alt=" About-image" />
-                </div>
-                <div class="home-aside__about-head">Hello I'm <?= $page['admin']['ho'] . " " . $page['admin']['ten'] ?>
-                </div>
-                <div class="home-aside__about-text">
-                    <?= $page['admin']['gioi_thieu'] ?>
-                </div>
-            </div>
-
-            <!-- Aside Comment -->
-            <div class="home-aside__comment">
-                <!-- Aside Comment Head -->
-                <div class="home-aside__comment-head">Nhận xét cuối cùng</div>
-
-                <?php foreach ($page['cmt'] as $item) { ?>
-                    <?php $user = $page['m_user']->userSelectById($item['id_tk']) ?>
-                    <!-- Aside Comment Item -->
-                    <div class="home-aside__comment-item post">
-                        <div class="home-aside__comment-item-img">
-                            <img src="<?= ROOT_URL ?>/<?= $user['avatar'] ?>" alt="User-image" />
-                        </div>
-                        <div>
-                            <div class="home-aside__comment-item-head">
-                                <div class="home-aside__comment-item-name">
-                                    <?= $user['ho'] . " " . $user['ten'] ?>
-                                </div>
-                                <div class="home-aside__comment-item-date"><?= date("d/m/Y", strtotime($item['ngay_capnhat'])) ?></div>
-                            </div>
-                            <div class="home-aside__comment-item-text">
-                                <?= $item['noidung_cmt'] ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-            </div>
-        </aside>
+        <?php require_once("./mvc/view/block/aside.php") ?>
     </div>
 </article>

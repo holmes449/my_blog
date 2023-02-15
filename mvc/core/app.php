@@ -1,54 +1,48 @@
 <?php
 class App
 {
-    protected $controller = "home";
-    protected $action = "show";
-    protected $param = [];
+
+    protected $controller = "Home";
+    protected $action = "Show";
+    protected $params = [];
+
     function __construct()
     {
-        // Mảng url [controller, action, param]
-        $array_url = isset($_GET['url']) === true ? $this->strToArray($_GET['url']) : [];
 
-        // Kiểm tra controller tồn tại hay không - có thì trả về
-        if (isset($array_url[0])) {
-            if (file_exists("./mvc/controller/" . $array_url[0] . ".php")) {
-                $this->controller = $array_url[0];
+        $arr = $this->UrlProcess();
+
+        // Controller
+        if (isset($arr[0])) {
+            if (file_exists("./mvc/controller/" . $arr[0] . ".php")) {
+                $this->controller = $arr[0];
             }
+            unset($arr[0]);
         }
 
-        // Gọi controller
-        require_once("./mvc/controller/" . $this->controller . ".php");
+        require_once "./mvc/controller/" . $this->controller . ".php";
 
-        // Kiểm tra action - hàm trong controller tồn tại hay không
-        if (isset($array_url[1])) {
-            if (method_exists($this->controller, $array_url[1])) {
-                $this->action = $array_url[1];
+        $this->controller = new $this->controller;
+
+        // Action
+        if (isset($arr[1])) {
+            if (method_exists($this->controller, $arr[1])) {
+                $this->action = $arr[1];
             }
+            unset($arr[1]);
         }
 
-        // Kiểm tra param tồn tại không
-        if (count($array_url) > 2) {
-            $this->param = array_slice($array_url, 2);
-        }
+        // Params
+        $this->params = $arr ? array_values($arr) : [];
 
-        // Gọi function trong controller và truyển param dạng mảng vào
-        call_user_func_array($this->newItem([$this->controller, $this->action]), $this->param);
+        call_user_func_array([$this->controller, $this->action], $this->params);
     }
 
-    // Xử lý chuỗi thành mảng
-    function strToArray($string)
+    function UrlProcess()
     {
-        $array = explode("/", trim($string, " "));
-        return $array;
-    }
-
-    // Khởi tạo và trả về đối tượng đầu tiên trong mảng
-    function newItem($array)
-    {
-        if (is_array($array)) {
-            $array[0] = new $array[0];
-            return $array;
+        if (isset($_GET["url"])) {
+            return explode("/", filter_var(trim($_GET["url"], "/")));
         }
     }
+
 }
 ?>

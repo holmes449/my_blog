@@ -60,5 +60,19 @@ class PostModel extends Database
         $gia_tri = $kq->fetchAll();
         return $gia_tri;
     }
+
+    // Tăng lượt xem mỗi lần vào bài viết
+    function postUpdateView($id)
+    {
+        $sql = "UPDATE bai_viet SET luot_xem = luot_xem + 1 WHERE id_bv = ?";
+        $this->pdoExecute($sql, $id);
+    }
+
+    // Lấy chi tiết tin
+    function postSelectName($text)
+    {
+        $sql = "SELECT * FROM bai_viet WHERE tieu_de like '%" . $text . "%'";
+        return $this->pdoQueryAll($sql);
+    }
 }
 ?>
