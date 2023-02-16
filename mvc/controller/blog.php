@@ -39,12 +39,12 @@ class Blog extends Controller
             'm_cmt' => $this->m_cmt,
             'post' => $post
         ]);
-
-        echo $_GET['timkiem'];
     }
 
     function type($id_tag = 1)
     {
+        $id_tag = (int) $id_tag;
+
         // Gọi Model
         $post = $this->m_post->postSelectByIdTag($id_tag);
         $name = $this->m_tag->tagNameById($id_tag);

@@ -4,7 +4,7 @@
         <div class="all-head">
             <?= $page['name']['ten_tag'] ?>
         </div>
-    <?php } else if (isset($_GET['timkiem'])) { ?>
+    <?php } else if (isset($page['timkiem'])) { ?>
             <div class="all-head">
                 <small><small>Tìm kiếm:</small></small>
             <?= $page['timkiem'] ?>
@@ -45,19 +45,7 @@
             <?php } ?>
 
             <!-- Page Number -->
-            <!-- <div class="home-post__numpage">
-                <div class="home-post__numpage-item">
-                    <a href=""><i class="fa-solid fa-arrow-left"></i></a>
-                </div>
-                <div class="home-post__numpage-item home-post__numpage-item--select">
-                    <a href="">1</a>
-                </div>
-                <div class="home-post__numpage-item"><a href="">2</a></div>
-                <div class="home-post__numpage-item"><a href="">3</a></div>
-                <div class="home-post__numpage-item">
-                    <a href=""><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div> -->
+            <?php page_number(count($page['post']), 1) ?>
         </section>
 
         <!-- Aside Home -->
